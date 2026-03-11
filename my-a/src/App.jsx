@@ -1,32 +1,43 @@
-import { useState } from 'react'
-import './App.css'
 
-// 1. Corrigindo os caminhos das importações
-import BoasVindas from './components/BoasVindas'
-import Aluno from './components/Aluno'
-import Botao from './components/Botao'
-import Titulo from './components/Titulo'
+import React, { useState } from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
+function Contador() {
+  // 1. Estado do contador (o que você já tinha)
+  const [contador, setContador] = useState(0);
+
+  // 2. Novo estado para o nome
+  const [nome, setNome] = useState('');
+
+  // função para aumentar
+  const incrementar = () => {
+    setContador(contador + 1);
+  };
 
   return (
-    <>
+    <div style={{ padding: '20px' }}>
+      {/* Seção do Nome */}
       <div>
-        {/* 2. Usando os componentes com a primeira letra MAIÚSCULA */}
-        <BoasVindas /> 
-        
-        <h1>Bem vindo ao grupo de estudo</h1>
-        <Aluno /> 
-        
-        <h1>Olha o nosso Botão</h1>
-        <Botao />
-        
-        <h1>Veja os nossos títulos</h1>
-        <Titulo />
+        <label>Digite seu nome: </label>
+        <input 
+          type="text" 
+          value={nome} 
+          onChange={(e) => setNome(e.target.value)} 
+          placeholder="Seu nome aqui..."
+        />
+        <p>Olá, <strong>{nome}</strong>! Você clicou {contador} vezes.</p>
       </div>
-    </>
-  )
+
+      <hr />
+
+      {/* Seção do Contador */}
+      <div>
+        <p>Contagem: {contador}</p>
+        <button onClick={incrementar}>
+          Incrementar
+        </button>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default Contador;
