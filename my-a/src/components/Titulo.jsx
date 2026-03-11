@@ -1,9 +1,9 @@
-function Taitle() {
+function Titulo() {
   return (
     <div>
-      <h1>Minha Primeira Aula</h1>
+      <h1>Veja os nossos títulos</h1>
     </div>
   );
 }
 
-export default App;
+export default Titulo;

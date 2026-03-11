@@ -1,9 +1,9 @@
-function Boto() {
+function Botao() {
   return (
     <div>
-      <h1>Minha Primeira Aula</h1>
+      <button>Clique Aqui</button> 
     </div>
   );
 }
 
-export default App;
+export default Botao; // Exporte Botao
